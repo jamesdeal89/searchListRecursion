@@ -1,4 +1,4 @@
-# an example of recursive porgramming using a search in a sorted list.
+# an example of recursive porgramming using binary search on a sorted list.
 def listSearch(sortedList, search, removedItems):
     length = len(sortedList)
     mini = length//2
@@ -13,6 +13,7 @@ def listSearch(sortedList, search, removedItems):
         listSearch(sortedList, search, removedItems)
 
 listSearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,18], 14, 0)
-"""total of mini's is the index so can be solved by adding minis up 
+"""
+total of mini's is the index so can be solved by adding minis up 
 and returning it all each time instead of removedItems method.
 """
