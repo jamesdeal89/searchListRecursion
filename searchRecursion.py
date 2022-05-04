@@ -4,22 +4,20 @@ def listSearch(sortedList, search, removedItems):
     length = len(sortedList)
     mini = length//2
     if sortedList[mini] == search:
-        print(str(search), "is item", str(mini + removedItems), "in the sorted list")
+        return mini+removedItems
     elif search > sortedList[mini]:
         removedItems += (length-mini)
-        sortedList = sortedList[mini+1:]
-        listSearch(sortedList, search, removedItems)
+        return listSearch(sortedList[mini+1:], search, removedItems)
     elif search < sortedList[mini]:
-        sortedList = sortedList[:mini]
-        listSearch(sortedList, search, removedItems)
+        return listSearch(sortedList[:mini], search, removedItems)
 
-listSearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,18], 14, 0)
+print(listSearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,18], 14, 0))
 """
 total of mini's is the index so can be solved by adding minis up 
 and returning it all each time instead of removedItems method.
 """
 """
-TEACHER SOLUTION:
+TEACHER SOLUTION:  
 def binSearch(inputList, value):
     midIndex = len(inputList)//2
     if value == inputList[midIndex]:
